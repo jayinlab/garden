@@ -1,0 +1,4 @@
+---
+const {entry}=Astro.props; const path=entry.data.type==='essay'?'essays':'notes';
+---
+<a class="card" href={`/${path}/${entry.id}`}><span class="card-type">{entry.data.type}</span><h3>{entry.data.title}</h3><p>{entry.data.description}</p><time>{entry.data.published.toLocaleDateString('ko-KR')}</time></a>
