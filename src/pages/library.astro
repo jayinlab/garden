@@ -1,0 +1,4 @@
+---
+import {getCollection} from 'astro:content'; import Base from '../layouts/Base.astro'; import BookGrid from '../components/BookGrid.astro'; const books=(await getCollection('books',({data})=>data.shelf==='library')).sort((a,b)=>a.data.order-b.data.order);
+---
+<Base title="Library"><div class="shell page"><div class="page-intro"><span class="eyebrow">Library</span><h1 class="page-title">내가 읽은 책.</h1><p class="lede">읽은 뒤에도 오래 남아, 세상을 보는 방법을 조금씩 바꾼 책들.</p></div><BookGrid books={books}/></div></Base>
