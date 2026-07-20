@@ -1,0 +1,4 @@
+---
+import {getCollection} from 'astro:content'; import Base from '../../layouts/Base.astro'; import EntryCard from '../../components/EntryCard.astro'; const entries=(await getCollection('writing',({data})=>data.type==='essay'&&!data.draft)).sort((a,b)=>b.data.published.valueOf()-a.data.published.valueOf());
+---
+<Base title="Essays"><div class="shell page"><div class="page-intro"><span class="eyebrow">Essays</span><h1 class="page-title">게임에서 삶으로.</h1><p class="lede">플레이한 경험에서 출발해 삶과 사람, 세계를 오래 바라보는 글.</p></div><div class="grid">{entries.map(e=><EntryCard entry={e}/>)}</div></div></Base>
