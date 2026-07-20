@@ -1,0 +1,4 @@
+---
+import {getCollection} from 'astro:content'; import Base from '../../layouts/Base.astro'; import EntryCard from '../../components/EntryCard.astro'; const entries=(await getCollection('writing',({data})=>data.type==='note'&&!data.draft)).sort((a,b)=>b.data.published.valueOf()-a.data.published.valueOf());
+---
+<Base title="Notes"><div class="shell page"><div class="page-intro"><span class="eyebrow">Notes</span><h1 class="page-title">아직 자라는 생각.</h1><p class="lede">완결을 기다리지 않고 남겨두는 관찰, 질문, 작은 연결.</p></div><div class="grid">{entries.map(e=><EntryCard entry={e}/>)}</div></div></Base>
