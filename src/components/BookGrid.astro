@@ -1,0 +1,4 @@
+---
+const {books}=Astro.props;
+---
+<div class="book-grid">{books.map((b:any)=><a class="book" href={b.data.link??'#'}><div class="cover">{b.data.cover?<img src={b.data.cover} alt=""/>:b.data.title}</div><h3>{b.data.title}</h3><p>{b.data.author}</p></a>)}</div>
