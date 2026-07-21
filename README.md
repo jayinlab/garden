@@ -1,12 +1,13 @@
-# Jaehee’s Garden
+# ELAI’s Garden
 
-게임과 책, 아직 자라는 생각을 기록하는 개인 정원입니다.
+게임과 책에서 시작된 에세이를 기록하는 개인 정원입니다.
 
 ## Stack
 
 - Astro 7 + MDX
 - Astro Content Collections
 - Cloudflare Pages
+- AI-assisted site maintenance
 
 ## Local development
 
@@ -21,4 +22,4 @@ npm run dev
 - Build output directory: `dist`
 - Node.js: 22 or later
 
-글은 `src/content/writing`, 책은 `src/content/books`에 추가합니다.
+에세이는 `src/content/writing`, 책은 `src/content/books`에 추가합니다.
