@@ -1,4 +1,9 @@
 ---
-const {entry}=Astro.props; const path=entry.data.type==='essay'?'essays':'notes';
+const { entry } = Astro.props;
 ---
-<a class="card" href={`/${path}/${entry.id}`}><span class="card-type">{entry.data.type}</span><h3>{entry.data.title}</h3><p>{entry.data.description}</p><time>{entry.data.published.toLocaleDateString('ko-KR')}</time></a>
+<a class="card" href={`/essays/${entry.id}`}>
+  <span class="card-type">Essay</span>
+  <h3>{entry.data.title}</h3>
+  <p>{entry.data.description}</p>
+  <time>{entry.data.published.toLocaleDateString('ko-KR')}</time>
+</a>
