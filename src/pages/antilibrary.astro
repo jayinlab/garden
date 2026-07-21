@@ -1,4 +1,0 @@
----
-import {getCollection} from 'astro:content'; import Base from '../layouts/Base.astro'; import BookGrid from '../components/BookGrid.astro'; const books=(await getCollection('books',({data})=>data.shelf==='antilibrary')).sort((a,b)=>a.data.order-b.data.order);
----
-<Base title="Antilibrary"><div class="shell page"><div class="page-intro"><span class="eyebrow">Antilibrary</span><h1 class="page-title">아직 읽지 않은 책.</h1><p class="lede">소유한 지식보다 모르는 세계가 더 크다는 사실을 보여주는 서가.</p></div><BookGrid books={books}/></div></Base>
