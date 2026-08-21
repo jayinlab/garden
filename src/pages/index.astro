@@ -2,36 +2,20 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import EntryCard from '../components/EntryCard.astro';
-import BookGrid from '../components/BookGrid.astro';
 
 const entries = (await getCollection('writing', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
 );
-const books = (await getCollection('books')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
 ---
 <Base>
   <div class="shell">
     <section class="hero">
       <div>
-        <span class="eyebrow">Essays on games, books & life</span>
-        <h1>생각을<br />가꾸는 곳.</h1>
-        <p>게임과 책에서 건져 올린 장면을 삶의 질문으로 이어 쓰는 ELAI의 개인 정원입니다.</p>
+        <h1>ELAI’s Garden</h1>
       </div>
-      <p class="hero-note">이곳에는 필명과 글만 남깁니다. 사이트의 기술적 유지보수에는 AI가 함께합니다.</p>
     </section>
     <section class="section">
-      <div class="section-head">
-        <div><span class="eyebrow">Recently tended</span><h2>최근 에세이</h2></div>
-        <a href="/essays">모든 글 보기 →</a>
-      </div>
-      <div class="grid">{entries.slice(0, 3).map((entry) => <EntryCard entry={entry} />)}</div>
-    </section>
-    <section class="section">
-      <div class="section-head">
-        <div><span class="eyebrow">On the shelf</span><h2>서가</h2></div>
-        <a href="/library">서재 보기 →</a>
-      </div>
-      <BookGrid books={books} />
+      <div class="grid">{entries.slice(0, 6).map((entry) => <EntryCard entry={entry} />)}</div>
     </section>
   </div>
 </Base>
