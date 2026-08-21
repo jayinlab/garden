@@ -2,9 +2,9 @@
 import '../styles/global.css';
 const {
   title = 'Garden',
-  description = '게임과 책에서 시작된 에세이를 가꾸는 ELAI의 정원',
+  description = 'ELAI’s Garden',
 } = Astro.props;
-const full = title === 'Garden' ? 'ELAI · Garden' : `${title} · ELAI`;
+const full = title === 'Garden' ? 'ELAI’s Garden' : `${title} · ELAI`;
 ---
 <!doctype html>
 <html lang="ko">
@@ -22,8 +22,6 @@ const full = title === 'Garden' ? 'ELAI · Garden' : `${title} · ELAI`;
         <a class="brand" href="/">ELAI’s <em>Garden</em></a>
         <div class="nav-links">
           <a href="/essays">Essays</a>
-          <a href="/library">Library</a>
-          <a href="/about">About</a>
         </div>
       </nav>
     </header>
@@ -31,7 +29,7 @@ const full = title === 'Garden' ? 'ELAI · Garden' : `${title} · ELAI`;
     <footer class="site-footer">
       <div class="shell footer-row">
         <span>© {new Date().getFullYear()} ELAI.</span>
-        <span>AI-assisted maintenance · <a href="/rss.xml">RSS</a></span>
+        <span><a href="/rss.xml">RSS</a></span>
       </div>
     </footer>
   </body>
